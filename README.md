@@ -1,59 +1,59 @@
-# packageName
+# reactivity-shared
 
-[![npm version][npm-version-src]][npm-version-href]
-[![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![Github Actions][github-actions-src]][github-actions-href]
-[![Codecov][codecov-src]][codecov-href]
 
-> Package description
+    通用的@vue/reactivity的use-api
 
+<br />
+
+## Motation 🐗
+
+[vueuse](https://vueuse.org/) 是非常好用的 `use` 库，但却只能运行在 `web` 端，所以这个库是 `vueuse` 不依赖浏览器的 `api` 的迁移与补充。可以运行在任何满足 `ES` 规范的环境，例如 `node`，`web` 等。
+
+<br />
 ## Usage
 
-Install package:
+### Install package
 
 ```sh
 # npm
-npm install packageName
+npm install reactivity-shared
 
 # yarn
-yarn install packageName
+yarn install reactivity-shared
 
 # pnpm
-pnpm install packageName
+pnpm install reactivity-shared
 ```
 
-Import:
+### Import
 
 ```js
 // ESM
-import { } from 'packageName'
+import { ref, and, watch } from 'reactivity-shared'
+
+const foo = ref(false)
+const bar = ref(false)
+
+watch(and(foo, bar), () => {
+    console.log("foo 和 bar 都为 true")
+})
 
 // CommonJS
-const { } = require('packageName')
+const { ref, and, watch } = require('reactivity-shared')
+
+const foo = ref(false)
+const bar = ref(false)
+
+watch(and(foo, bar), () => {
+    console.log("foo 和 bar 都为 true")
+})
 ```
 
-## 💻 Development
-
-- Clone this repository
-- Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable` (use `npm i -g corepack` for Node.js < 16.10)
-- Install dependencies using `yarn install`
-- Run interactive tests using `yarn dev`
+<br />
 
 ## License
 
-Made with 💛
+Made with markthree
 
 Published under [MIT License](./LICENSE).
 
-<!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/packageName?style=flat-square
-[npm-version-href]: https://npmjs.com/package/packageName
-
-[npm-downloads-src]: https://img.shields.io/npm/dm/packageName?style=flat-square
-[npm-downloads-href]: https://npmjs.com/package/packageName
-
-[github-actions-src]: https://img.shields.io/github/workflow/status/unjs/packageName/ci/main?style=flat-square
-[github-actions-href]: https://github.com/unjs/packageName/actions?query=workflow%3Aci
-
-[codecov-src]: https://img.shields.io/codecov/c/gh/unjs/packageName/main?style=flat-square
-[codecov-href]: https://codecov.io/gh/unjs/packageName
