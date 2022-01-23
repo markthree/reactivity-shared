@@ -18,9 +18,11 @@
   },
   "scripts": {
     "test": "vitest",
+    "typecheck": "tsc",
     "build": "vite build && tsc",
     "test:watch": "vitest watch",
-    "coverage": "vitest --coverage"
+    "coverage": "vitest --coverage",
+    "prepublish": "vite build && tsc"
   },
   "keywords": [
     "use",
