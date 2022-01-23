@@ -1,8 +1,2 @@
-.vscode
-node_modules
-*.log*
-.DS_Store
-coverage
 dist
-types
-.conf*
+node_modules
